@@ -1,0 +1,6 @@
+create user book_ex identified by book_ex
+default tablespace users temporary tablespace temp;
+--계정 생성 기본 테이블과 임시 테이블 연결
+
+grant connect, dba to book_ex;
+-- 접근 권한과 dba권한 부여

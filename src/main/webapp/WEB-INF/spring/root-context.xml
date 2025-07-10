@@ -12,15 +12,10 @@
 
 	<bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
 
-		<!-- log4jdbc용으로 튜닝 -> 콘솔에서 결과를 표형식으로 볼 수 있게 설정 
 		<property name="driverClassName"
 			value="oracle.jdbc.driver.OracleDriver"></property>
 		<property name="jdbcUrl"
-			value="jdbc:oracle:thin:@192.168.111.104:1521:XE"></property> -->
-		
-		<!-- p102에 변경 pstmt의 ?를 볼 수 있게 변경 -->	
-		<property name="driverClassName" value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy"></property> 
-		<property name="jdbcUrl" value="jdbc:log4jdbc:oracle:thin:@192.168.111.104:1521:XE"></property> 
+			value="jdbc:oracle:thin:@192.168.111.104:1521:XE"></property>
 
 		<property name="username" value="book_ex"></property>
 		<property name="password" value="book_ex"></property>
@@ -43,5 +38,4 @@
 	
 	<context:component-scan
 		base-package="org.zerock.sample"></context:component-scan>
-	<!-- 컨트롤러 역할을 담당하는 부분을 스캔하는 목적  -->
 </beans>

@@ -10,6 +10,5 @@
 </h1>
 
 <P>  The time on the server is ${serverTime}. </P>
-<!-- 모델에 있는 데이터 가져오는 방법 1수위 ${표현식} -->
 </body>
 </html>

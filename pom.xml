@@ -46,7 +46,7 @@
 			<version>${org.aspectj-version}</version>
 		</dependency>
 
-		<!-- Logging  보안 이슈로 버전 향상 해야 됨
+		<!-- Logging -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
@@ -63,8 +63,8 @@
 			<artifactId>slf4j-log4j12</artifactId>
 			<version>${org.slf4j-version}</version>
 			<scope>runtime</scope>
-		</dependency>-->
-		<!--
+		</dependency>
+		<!-- 보안 이슈로 버전 향상 해야 됨
 		<dependency>
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
@@ -115,20 +115,13 @@
 			<version>1</version>
 		</dependency>
 
-		<!-- Servlet 
+		<!-- Servlet -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>servlet-api</artifactId>
 			<version>2.5</version>
 			<scope>provided</scope>
-		</dependency> 서블릿 버젼 향상-->
-		<!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
-	<dependency><!-- 서블릿 버전 향상 -->
-    	<groupId>javax.servlet</groupId>
-    	<artifactId>javax.servlet-api</artifactId>
-   		<version>3.1.0</version>
-    	<scope>provided</scope>
-	</dependency>
+		</dependency>
 		<dependency>
 			<groupId>javax.servlet.jsp</groupId>
 			<artifactId>jsp-api</artifactId>
@@ -228,20 +221,6 @@
 				
 		-->
 		
-		<!-- 로그출력을 표형식으로 구현 https://mvnrepository.com/artifact/org.bgee.jdbc-log4j2/log4jdbc-log4j2-jdbc4.1 -->
-		<dependency>
-			<groupId>org.bgee.log4jdbc-log4j2</groupId>
-			<artifactId>log4jdbc-log4j2-jdbc4</artifactId>
-			<version>1.16</version>
-		</dependency>
-		
-		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
-	<dependency>
-    	<groupId>com.fasterxml.jackson.core</groupId>
-    	<artifactId>jackson-databind</artifactId>
-    	<version>2.9.4</version>
-	</dependency>
-
 	</dependencies> <!-- 의존성 주입 종료 -->
 	<build>
 		<plugins>

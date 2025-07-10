@@ -20,25 +20,10 @@ public class TimeMapperTests {
 	
 	@Test
 	public void testGetTime() {
-		// 인터페이스 추상메서드에 어노테이션으로 코드 실행
+		
 		log.info("타입매퍼 테스트 getname : " + timeMapper.getClass().getName());
 		log.info("타입매퍼 결과 : " + timeMapper.getTime());
 		
 	}
 	
-	@Test
-	public void testGetTime2() {
-		// 인터페이스 추상메서드 메퍼로 xml를 사용함.
-		log.info("타입매퍼2 테스트 getname : " + timeMapper.getClass().getName());
-		log.info("타입매퍼2 결과 : " + timeMapper.getTime2());
-		
-	}
-	
-	@Test
-	public void testGetTime2Log4jdbc() {
-		// 인터페이스 추상메서드 메퍼로 xml를 사용함.
-	//	log.info("타입매퍼2 테스트 getname");
-		log.info(timeMapper.getTime2());
-		
-	}
 }

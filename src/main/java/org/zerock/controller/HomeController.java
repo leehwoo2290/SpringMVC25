@@ -33,7 +33,10 @@ public class HomeController {
 		
 		model.addAttribute("serverTime", formattedDate );
 		
+		//스프링은 백에서 만든 값을 model에 담아 보냄
 		return "home";
+		//servlet-context.xml에서 반응
+		// web-inf/view/home.jsp에 연결한다.
 	}
 	
 }

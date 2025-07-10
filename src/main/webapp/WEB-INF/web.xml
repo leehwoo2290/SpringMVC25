@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="4.0" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee                       http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd">
-<!-- 톰켓에 있는  web.xml 17행 코드로 교체  -->
+
 	<!-- The definition of the Root Spring Container shared by all Servlets and Filters -->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
@@ -20,10 +20,6 @@
 			<param-name>contextConfigLocation</param-name>
 			<param-value>/WEB-INF/spring/appServlet/servlet-context.xml</param-value>
 		</init-param>
-		<init-param>
-			<param-name>throwExceptionIfNoHandlerFound</param-name>
-			<param-value>true</param-value>
-		</init-param> <!-- 톰켓이 404같은예외처리 하지마라 -->
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 		

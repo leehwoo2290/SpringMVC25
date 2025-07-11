@@ -27,8 +27,8 @@ public class BoardMapperTests {
 		// 인터페이스.메서드.for문   결과객체 
 		//                             -> 람다식(인터페이스용)
 		//                                log.info 콘솔에 출력(board.toString)
-	
 	}
+	
 	
 	@Test // import org.junit.Test; (메서드 단위로 테스트)
 	public void testGetListXML() {
@@ -37,67 +37,76 @@ public class BoardMapperTests {
 		// 인터페이스.메서드.for문   결과객체 
 		//                             -> 람다식(인터페이스용)
 		//                                log.info 콘솔에 출력(board.toString)
-	
 	}
 	
-	@Test // import org.junit.Test; (메서드 단위로 테스트)
+	
+	
+	@Test
 	public void testInsert() {
 		
-		BoardVO board = new BoardVO();
-		board.setTitle("오류 없어라");
-		board.setContent("오류 오류");
-		board.setWriter("이현우");
+		BoardVO board = new BoardVO(); 
+		board.setTitle("제발 오류없어라");
+		board.setContent("이번엔 누구냐!!!");
+		board.setWriter("김기원");
 		
 		mapper.insert(board);
 		
 		log.info(board);
+		
 	}
 	
-	@Test // import org.junit.Test; (메서드 단위로 테스트)
+	
+	
+	@Test
 	public void testInsertSelectKey() {
 		
 		BoardVO board = new BoardVO();
-		board.setTitle("오류 없어라");
-		board.setContent("오류 오류");
-		board.setWriter("이현우");
+		board.setTitle("이번엔 제발!!!! 번호나와롸");
+		board.setContent("내 게시물에 번호는? ");
+		board.setWriter("김기원");
 		
 		mapper.insertSelectKey(board);
 		
 		log.info(board);
-		log.info("번호" + board.getBno());
+		log.info("내가만든 게시물의 번호는 : " + board.getBno());
+		
 	}
 	
-	@Test // import org.junit.Test; (메서드 단위로 테스트)
+	@Test
 	public void testRead() {
 		
-		BoardVO board = mapper.read(1L);
+		BoardVO board = mapper.read(1L); // 1번 게시물을 read 메서드로 보내고 객체로 받는다.
 		
 		log.info(board);
-	
+		
 	}
 	
-	@Test // import org.junit.Test; (메서드 단위로 테스트)
+	
+	@Test
 	public void testDelete() {
 		
-		int count = mapper.delete(1L);
-		
-		log.info("삭제된 갯수 출력" + count );
-	
+		int count = mapper.delete(3L);
+		log.info("삭제된 갯수 출력 : " + count + "건");
 	}
 	
-	@Test // import org.junit.Test; (메서드 단위로 테스트)
+	
+	
+	@Test
 	public void testUpdate() {
 		
 		BoardVO board = new BoardVO();
-		board.setBno(0L);
-		board.setTitle("오류 없어라");
-		board.setContent("오류 오류");
-		board.setWriter("이현우");
+		board.setBno(5L);
+		board.setTitle("수정된 제목");
+		board.setContent("수정된 내용");
+		board.setWriter("김수정");
 		
 		int count = mapper.update(board);
-	
-		log.info("수정된 갯수" +count);
-		log.info("수정된 객체" +board);
-	
+		log.info("수정된 갯수 : " + count + "건");
+		log.info("수정된 객체 출력 :" + board);
+		
+		
+		
+		
+		
 	}
 }

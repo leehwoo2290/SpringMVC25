@@ -30,42 +30,6 @@ public class BoardController {
 		
 		model.addAttribute("list", service.getList());
 		//프론트에서 ${list}로 저장
-		//리턴타입 void면 경로와 같은 jsp찾음
-	}
-	
-	@GetMapping("/register")
-	public String register() {
-		
-		return "/board/register";
-	}
-	
-	@PostMapping("/register")
-	public String register(BoardVO board, RedirectAttributes rttr) {
-		//RedirectAttributes 성공후 이동할 경로 기입
-		
-		log.info("BoardController.register메서드 실행..");
-		
-		service.register(board);
-		
-		rttr.addFlashAttribute("result",board.getBno());
-		//1회용 값 생성 나중에 프론트에서 alert로 활용
-		
-		return "redirect:/board/list";
-		//성공 시 다음 페이지
-	}
-	
-	@GetMapping({"/get", "/modify"}) //http://192/168/111/104:80/board/list
-	public void get(@RequestParam("bno")Long bno, Model model) {
-		//void 리턴 타입의 url이 2개인 경우 다 반응한다.
-		//get -> get.jsp
-		// modify-> modify.jsp
-		
-		//url을 통해서 넘어온 bno=5문자열 long타입으로 받는다.
-		log.info("BoardController.get메서드 실행..");
-		
-		model.addAttribute("board", service.get(bno));
-		//서비스에서 매퍼를 다녀와 객체를 가져온것을 모델객체에 추가
-		//프론트에서 ${board.bno} 등으로 출력가능
 	}
 	
 	@PostMapping("/modify")
@@ -83,21 +47,4 @@ public class BoardController {
 		return "redirect:/board/list";
 		//성공 시 다음 페이지
 	}
-	
-	@PostMapping("/remove")
-	public String remove(@RequestParam("bno")Long bno, RedirectAttributes rttr) {
-		//RedirectAttributes 성공후 이동할 경로 기입
-		
-		log.info("BoardController.remove메서드 실행..");
-		
-		if(service.remove(bno)) {
-			rttr.addFlashAttribute("result","success");
-			//성공시 프론트에 result이름으로 success전송
-		}			
-		//1회용 값 생성 나중에 프론트에서 alert로 활용
-		
-		return "redirect:/board/list";
-		//성공 시 다음 페이지
-	}
-	
 }
